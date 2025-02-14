@@ -31,4 +31,10 @@ Les utilisateurs pourront observer une navbar simple et attrayante avec plusieur
 
 
 ## 🦺​ Maquette
-![](https://i.imgur.com/YIF0s58.png)
+https://www.figma.com/design/tuGpKu6DxgYiThG6tg6dtW/Untitled?node-id=0-1&t=M0RlbTvE7SfVzSyF-1
+![](https://i.imgur.com/8MDbqDk.png)
+![](https://i.imgur.com/bO0syf0.png)
+![](https://i.imgur.com/b2lQqlz.png)
+![](https://i.imgur.com/CzPkjq7.png)
+
+
