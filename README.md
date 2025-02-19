@@ -15,6 +15,10 @@ Les utilisateurs pourront observer une navbar simple et attrayante avec plusieur
 - Yislaine Yanell Perez Gracia
 - Ikram Saidi
 
+## 🎓​​​ Règlementation
+
+## 🗂️ Libraires
+
 ## 🚀 Technologies
 - Frontend: React
 - Backend: Spring
@@ -23,15 +27,15 @@ Les utilisateurs pourront observer une navbar simple et attrayante avec plusieur
 ## 🥽​​ Installation
 - Sur GitHub
   - git clone https://github.com/Lysnne/ProjetFullStack-.git
-  - git checkout -b dev
-  - git pull origin dev
+  - git checkout -b (branche)
+  - git pull origin (branche)
 - Sur Visual Code Studio
+  - cd (projet)  
   - npm install 
   - npm run dev
 
-
 ## 🦺​ Maquette
-https://www.figma.com/design/tuGpKu6DxgYiThG6tg6dtW/Untitled?node-id=0-1&t=M0RlbTvE7SfVzSyF-1
+Figma: https://www.figma.com/design/tuGpKu6DxgYiThG6tg6dtW/Untitled?node-id=0-1&t=M0RlbTvE7SfVzSyF-1
 ![](https://i.imgur.com/8MDbqDk.png)
 ![](https://i.imgur.com/bO0syf0.png)
 ![](https://i.imgur.com/b2lQqlz.png)
