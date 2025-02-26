@@ -1,6 +1,5 @@
 package ikasaidi.backend.controllers;
 
-import ikasaidi.backend.entity.TblAction;
 import ikasaidi.backend.repositories.ActionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
