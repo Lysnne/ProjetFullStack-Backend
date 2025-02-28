@@ -1,42 +1,37 @@
 package ikasaidi.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer stock_id;
+    private Long id;
     private String symbol;
     private String name;
     private Double price;
     private String sector;
-    private Double interval_1h;
-    private Double interval_4h;
-    private Double interval_12h;
-    private Double interval_24h ;
     private Double volume;
     private Double marketcap ;
-    private Double dividend ;
 
-    public Integer getStock_id() {
-        return stock_id;
+    @ManyToOne
+    private Portfolio portfolio;
+
+    public Portfolio getPortfolio() {
+        return portfolio;
     }
 
-    public void setStock_id(Integer stock_id) {
-        this.stock_id = stock_id;
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
     }
 
-    public Double getDividend() {
-        return dividend;
+    public Long getId() {
+        return id;
     }
 
-    public void setDividend(Double dividend) {
-        this.dividend = dividend;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Double getMarketcap() {
@@ -55,38 +50,6 @@ public class Stock {
         this.volume = volume;
     }
 
-    public Double getInterval_24h() {
-        return interval_24h;
-    }
-
-    public void setInterval_24h(Double interval_24h) {
-        this.interval_24h = interval_24h;
-    }
-
-    public Double getInterval_12h() {
-        return interval_12h;
-    }
-
-    public void setInterval_12h(Double interval_12h) {
-        this.interval_12h = interval_12h;
-    }
-
-    public Double getInterval_4h() {
-        return interval_4h;
-    }
-
-    public void setInterval_4h(Double interval_4h) {
-        this.interval_4h = interval_4h;
-    }
-
-    public Double getInterval_1h() {
-        return interval_1h;
-    }
-
-    public void setInterval_1h(Double interval_1h) {
-        this.interval_1h = interval_1h;
-    }
-
     public String getSector() {
         return sector;
     }
@@ -103,19 +66,19 @@ public class Stock {
         this.price = price;
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 }

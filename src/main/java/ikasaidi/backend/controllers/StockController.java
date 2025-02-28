@@ -1,6 +1,7 @@
 package ikasaidi.backend.controllers;
 
-import ikasaidi.backend.repositories.ActionRepository;
+import ikasaidi.backend.model.Stock;
+import ikasaidi.backend.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/action")
+@RequestMapping("/stock")
 @CrossOrigin()
-public class ActionController {
+public class StockController {
 
     @Autowired
-    ActionRepository actionRepository;
+    StockRepository stockRepository;
 
     @GetMapping
-    public List<TblAction> getAll(){
-        return actionRepository.findAll();
+    public List<Stock> getAll(){
+        return stockRepository.findAll();
     }
 
 

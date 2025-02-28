@@ -2,21 +2,45 @@ package ikasaidi.backend.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
 public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer portfolio_id ;
+    private Long id ;
     private Double shares_owned ;
-    private Date DATE;
     private Double total_value ;
     private Double total_profit ;
-    @OneToOne
-    Customer customer_id ;
 
-    @OneToOne
-    Stock stock_id;
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    public Double getTotal_profit() {
+        return total_profit;
+    }
+
+    public void setTotal_profit(Double total_profit) {
+        this.total_profit = total_profit;
+    }
+
+    public Double getTotal_value() {
+        return total_value;
+    }
+
+    public void setTotal_value(Double total_value) {
+        this.total_value = total_value;
+    }
+
+    public Double getShares_owned() {
+        return shares_owned;
+    }
+
+    public void setShares_owned(Double shares_owned) {
+        this.shares_owned = shares_owned;
+    }
 }
