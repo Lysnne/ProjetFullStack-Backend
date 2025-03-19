@@ -54,6 +54,6 @@ public class StockController {
             throw new StockNotFoundException(id);
         }
         stockRepository.deleteById(id);
-        return  "Stock with id "+id+" has been deleted success.";
+        return  "Stock with id "+ id +" has been deleted success.";
     }
 }

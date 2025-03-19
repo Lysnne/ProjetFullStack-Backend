@@ -30,6 +30,12 @@ public class Customer {
         registration_date = LocalDateTime.now();
     }
 
+    public Customer(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
     public Long getId_customer() {
         return id_customer;
     }
