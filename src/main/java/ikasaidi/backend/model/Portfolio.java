@@ -2,30 +2,35 @@ package ikasaidi.backend.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id_portfolio ;
     private Double shares_owned ;
     private Double total_value ;
     private Double total_profit ;
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ManyToMany
+    private List<Stock> stocks ;
 
-
-    public Double getTotal_profit() {
-        return total_profit;
+    public Long getId_portfolio() {
+        return id_portfolio;
     }
 
-    public void setTotal_profit(Double total_profit) {
-        this.total_profit = total_profit;
+    public void setId_portfolio(Long id_portfolio) {
+        this.id_portfolio = id_portfolio;
+    }
+
+    public Double getShares_owned() {
+        return shares_owned;
+    }
+
+    public void setShares_owned(Double shares_owned) {
+        this.shares_owned = shares_owned;
     }
 
     public Double getTotal_value() {
@@ -36,11 +41,19 @@ public class Portfolio {
         this.total_value = total_value;
     }
 
-    public Double getShares_owned() {
-        return shares_owned;
+    public Double getTotal_profit() {
+        return total_profit;
     }
 
-    public void setShares_owned(Double shares_owned) {
-        this.shares_owned = shares_owned;
+    public void setTotal_profit(Double total_profit) {
+        this.total_profit = total_profit;
+    }
+
+    public List<Stock> getStocks() {
+        return stocks;
+    }
+
+    public void setStocks(List<Stock> stocks) {
+        this.stocks = stocks;
     }
 }

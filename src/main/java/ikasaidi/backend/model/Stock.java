@@ -7,7 +7,7 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_stock;
     private String symbol;
     private String name;
     private Double price;
@@ -15,55 +15,21 @@ public class Stock {
     private Double volume;
     private Double marketcap ;
 
-    @ManyToOne
-    private Portfolio portfolio;
 
-    public Portfolio getPortfolio() {
-        return portfolio;
+    public Long getId_stock() {
+        return id_stock;
     }
 
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
+    public void setId_stock(Long id_stock) {
+        this.id_stock = id_stock;
     }
 
-    public Long getId() {
-        return id;
+    public String getSymbol() {
+        return symbol;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Double getMarketcap() {
-        return marketcap;
-    }
-
-    public void setMarketcap(Double marketcap) {
-        this.marketcap = marketcap;
-    }
-
-    public Double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(Double volume) {
-        this.volume = volume;
-    }
-
-    public String getSector() {
-        return sector;
-    }
-
-    public void setSector(String sector) {
-        this.sector = sector;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     public String getName() {
@@ -74,11 +40,35 @@ public class Stock {
         this.name = name;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+
+    public Double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Double volume) {
+        this.volume = volume;
+    }
+
+    public Double getMarketcap() {
+        return marketcap;
+    }
+
+    public void setMarketcap(Double marketcap) {
+        this.marketcap = marketcap;
     }
 }
