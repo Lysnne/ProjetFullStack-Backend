@@ -23,7 +23,7 @@ public class Customer {
     private String notes;
 
     @OneToOne
-    @JoinColumn(name = "portfolio_id")
+    @JoinColumn(name = "portfolio_id", referencedColumnName = "id_portfolio")
     private Portfolio portfolio;
 
     public Customer() {

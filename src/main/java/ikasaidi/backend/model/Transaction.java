@@ -19,6 +19,7 @@ public class Transaction {
     private String transaction_status;
 
     @ManyToOne
+    @JoinColumn(name = "id_customer", referencedColumnName = "id_customer")
     private Customer customer;
 
     public Transaction(){
