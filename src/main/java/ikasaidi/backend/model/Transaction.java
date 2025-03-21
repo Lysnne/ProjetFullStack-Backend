@@ -19,8 +19,11 @@ public class Transaction {
     private String transaction_status;
 
     @ManyToOne
-    @JoinColumn(name = "id_customer", referencedColumnName = "id_customer")
-    private Customer customer;
+    @JoinColumn(name = "id_portfolio", referencedColumnName = "id_portfolio")
+    private Portfolio portfolio;
+
+    @ManyToOne
+    private Stock stock;
 
     public Transaction(){
         transaction_status = "pending";
@@ -91,11 +94,5 @@ public class Transaction {
         this.transaction_status = transaction_status;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
 }

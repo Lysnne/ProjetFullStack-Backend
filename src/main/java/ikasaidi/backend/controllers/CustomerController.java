@@ -58,7 +58,6 @@ public class CustomerController {
                 .map(customer -> {
                     customer.setBalance(newOne.getBalance());
                     customer.setDate_of_birth(newOne.getDate_of_birth());
-                    customer.setRegistration_date(newOne.getRegistration_date());
                     customer.setEmail(newOne.getEmail());
                     customer.setFirst_name(newOne.getFirst_name());
                     customer.setLast_name(newOne.getLast_name());

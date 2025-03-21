@@ -16,6 +16,8 @@ public class Stock {
     private Double marketcap ;
 
 
+
+
     public Long getId_stock() {
         return id_stock;
     }

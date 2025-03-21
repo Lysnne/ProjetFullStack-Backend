@@ -13,9 +13,10 @@ public class Portfolio {
     private Double shares_owned ;
     private Double total_value ;
     private Double total_profit ;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "id_customer")
+    Customer customer;
 
-    @ManyToMany
-    private List<Stock> stocks ;
 
     public Long getId_portfolio() {
         return id_portfolio;
@@ -49,11 +50,4 @@ public class Portfolio {
         this.total_profit = total_profit;
     }
 
-    public List<Stock> getStocks() {
-        return stocks;
-    }
-
-    public void setStocks(List<Stock> stocks) {
-        this.stocks = stocks;
-    }
 }

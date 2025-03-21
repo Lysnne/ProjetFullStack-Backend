@@ -20,11 +20,11 @@ INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('IBM'
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('ORCL', 'Oracle Corp.', 108.20, 'Technology', 7400000, 190000000000);
 
 
-INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, registration_date, username, password, balance, notes) VALUES ('John', 'Doe', '1990-05-15', 'john.doe@example.com', '+1-555-1234567', '2025-03-21 12:00:00', 'johndoe90', 'Password123', 1500.50, 'Regular customer');
-INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, registration_date, username, password, balance, notes) VALUES ('Jane', 'Smith', '1985-07-23', 'jane.smith@example.com', '+1-555-2345678', '2025-03-20 11:30:00', 'janesmith85', 'Password456', 250.75, 'VIP customer');
-INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, registration_date, username, password, balance, notes)VALUES ('Emily', 'Johnson', '2000-11-10', 'emily.johnson@example.com', '+1-555-3456789', '2025-03-19 14:15:00', 'emilyjohnson00', 'Password789', 500.00, 'New customer');
-INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, registration_date, username, password, balance, notes) VALUES ('Michael', 'Brown', '1995-02-28', 'michael.brown@example.com', '+1-555-4567890', '2025-03-18 09:00:00', 'michaelbrown95', 'Password101', 800.30, 'Regular customer');
-INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, registration_date, username, password, balance, notes) VALUES ('Sophia', 'Miller', '1988-08-14', 'sophia.miller@example.com', '+1-555-5678901', '2025-03-17 16:45:00', 'sophiamiller88', 'Password102', 1200.40, 'VIP customer');
+INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('John', 'Doe', '1990-05-15', 'john.doe@example.com', '+1-555-1234567', 'johndoe90', 'Password123', 1500.50);
+INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Jane', 'Smith', '1985-07-23', 'jane.smith@example.com', '+1-555-2345678', 'janesmith85', 'Password456', 250.75);
+INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance)VALUES ('Emily', 'Johnson', '2000-11-10', 'emily.johnson@example.com', '+1-555-3456789' , 'emilyjohnson00', 'Password789', 500.00);
+INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Michael', 'Brown', '1995-02-28', 'michael.brown@example.com', '+1-555-4567890' , 'michaelbrown95', 'Password101', 800.30);
+INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Sophia', 'Miller', '1988-08-14', 'sophia.miller@example.com', '+1-555-5678901' , 'sophiamiller88', 'Password102', 1200.40);
 
 INSERT INTO portfolio (shares_owned, total_value, total_profit)VALUES (150.50, 25000.75, 5000.25);
 INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (320.00, 48000.40, 8000.60);
