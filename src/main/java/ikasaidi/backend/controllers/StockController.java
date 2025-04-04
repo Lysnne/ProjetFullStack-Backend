@@ -21,13 +21,19 @@ public class StockController {
         return stockRepository.findAll();
     }
 
+    @GetMapping("/getStock")
+    public Stock getCryptoBySymbol(@PathVariable String symbol){
+        return stockRepository.findStocksBySymbol(symbol);
+    }
+
+
     @PostMapping("/createStock")
     public Stock createStock(@RequestBody Stock stock){
         stockRepository.save(stock);
         return stock;
     }
 
-    @GetMapping("/stock/{id}")
+    @GetMapping("/getstock/{id}")
     public Stock getStockById(@PathVariable Long id) {
         return stockRepository.findById(id)
                 .orElseThrow(() -> new StockNotFoundException(id));
