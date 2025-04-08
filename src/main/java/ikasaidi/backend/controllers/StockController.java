@@ -1,8 +1,8 @@
 package ikasaidi.backend.controllers;
 
-import ikasaidi.backend.exception.StockNotFoundException;
+
 import ikasaidi.backend.model.Stock;
-import ikasaidi.backend.repositories.StockRepository;
+import ikasaidi.backend.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,52 +14,34 @@ import java.util.List;
 public class StockController {
 
     @Autowired
-    StockRepository stockRepository;
+    private StockService stockService;
 
     @GetMapping("/getAllStocks")
     public List<Stock> getAll(){
-        return stockRepository.findAll();
-    }
-
-    @GetMapping("/getStock")
-    public Stock getCryptoBySymbol(@PathVariable String symbol){
-        return stockRepository.findStocksBySymbol(symbol);
-    }
-
-
-    @PostMapping("/createStock")
-    public Stock createStock(@RequestBody Stock stock){
-        stockRepository.save(stock);
-        return stock;
+        return stockService.getAllStocks();
     }
 
     @GetMapping("/getstock/{id}")
     public Stock getStockById(@PathVariable Long id) {
-        return stockRepository.findById(id)
-                .orElseThrow(() -> new StockNotFoundException(id));
+        return stockService.getStockById(id);
+    }
+
+    @PostMapping("/createStock")
+    public Stock createStock(@RequestBody Stock stock){
+        return stockService.createStock(stock);
     }
 
 
     @PutMapping("/stock/{id}")
     Stock updateStock(@RequestBody Stock newOne, @PathVariable Long id) {
-        return stockRepository.findById(id)
-                .map(stock -> {
-                    stock.setSymbol(newOne.getSymbol());
-                    stock.setName(newOne.getName());
-                    stock.setPrice(newOne.getPrice());
-                    stock.setSector(newOne.getSector());
-                    stock.setVolume(newOne.getVolume());
-                    stock.setMarketcap(newOne.getMarketcap());
-                    return stockRepository.save(stock);
-                }).orElseThrow(() -> new StockNotFoundException(id));
+       return stockService.updateStock(newOne, id);
     }
 
+    /*
     @DeleteMapping("/stock/{id}")
     String deleteStock(@PathVariable Long id){
-        if(!stockRepository.existsById(id)){
-            throw new StockNotFoundException(id);
-        }
-        stockRepository.deleteById(id);
-        return  "Stock with id "+ id +" has been deleted success.";
+       return stockService.deleteStock(id);
     }
+
+     */
 }
