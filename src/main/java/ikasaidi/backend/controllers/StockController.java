@@ -37,11 +37,10 @@ public class StockController {
        return stockService.updateStock(newOne, id);
     }
 
-    /*
+
     @DeleteMapping("/stock/{id}")
     String deleteStock(@PathVariable Long id){
        return stockService.deleteStock(id);
     }
 
-     */
 }

@@ -42,8 +42,8 @@ public class StockService {
                 }).orElseThrow(() -> new StockNotFoundException(id));
 
     }
-    /*
-    public Stock deleteStock(Long id) {
+
+    public String deleteStock(Long id) {
         if(!stockRepository.existsById(id)){
             throw new StockNotFoundException(id);
         }
@@ -51,5 +51,5 @@ public class StockService {
         return  "Stock with id "+ id +" has been deleted success.";
     }
 
-     */
+
 }
