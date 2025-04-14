@@ -21,6 +21,27 @@ public class StockController {
         return stockService.getAllStocks();
     }
 
+    @GetMapping("/getAllStocksSortedByPrice")
+    public List<Stock> getAllStocksSortedByPrice(){
+        return stockService.getStocksSortedByPrice();
+    }
+
+    @GetMapping("/getAllStocksSortedByName")
+    public List<Stock> getAllStocksSortedByName(){
+        return stockService.getStocksSortedByName();
+    }
+
+    @GetMapping("/getAllStocksSortedByVolume")
+    public List<Stock> getAllStocksSortedByVolume(){
+        return stockService.getStocksSortedByVolume();
+    }
+
+    @GetMapping("/getAllStocksSortedByMarketCap")
+    public List<Stock> getAllStocksSortedByMarketCap(){
+        return stockService.getStocksSortedByMarketCap();
+    }
+
+
     @GetMapping("/getstock/{id}")
     public Stock getStockById(@PathVariable Long id) {
         return stockService.getStockById(id);
@@ -32,15 +53,18 @@ public class StockController {
     }
 
 
-    @PutMapping("/stock/{id}")
+    @PutMapping("/updateStock/{id}")
     Stock updateStock(@RequestBody Stock newOne, @PathVariable Long id) {
        return stockService.updateStock(newOne, id);
     }
 
 
-    @DeleteMapping("/stock/{id}")
+    @DeleteMapping("/deleteStock/{id}")
     String deleteStock(@PathVariable Long id){
        return stockService.deleteStock(id);
     }
+
+
+
 
 }

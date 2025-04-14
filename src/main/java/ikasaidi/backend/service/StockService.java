@@ -19,6 +19,22 @@ public class StockService {
         return stockRepository.findAll();
     }
 
+    public List<Stock> getStocksSortedByPrice() {
+        return stockRepository.orderByPrice();
+    }
+
+    public List<Stock> getStocksSortedByName() {
+        return stockRepository.orderByName();
+    }
+
+    public List<Stock> getStocksSortedByVolume() {
+        return stockRepository.orderByVolume();
+    }
+
+    public List<Stock> getStocksSortedByMarketCap(){
+        return stockRepository.orderByMarketCap();
+    }
+
     public Stock getStockById(Long id) {
         return stockRepository.findById(id)
                 .orElseThrow(() -> new StockNotFoundException(id));
@@ -50,6 +66,9 @@ public class StockService {
         stockRepository.deleteById(id);
         return  "Stock with id "+ id +" has been deleted success.";
     }
+
+
+
 
 
 }

@@ -15,23 +15,18 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     public Stock findStocksBySymbol(String symbol);
     public List<Stock> findStocksBySector(String sector);
 
-    @Query("select max(s.price)  from Stock s")
-    public Double getMaxPrice();
 
-    @Query("select min(s.price)  from Stock s")
-    public Double getMinPrice();
+    @Query("select s from Stock s order by s.price")
+    public List<Stock> orderByPrice();
 
-    @Query("select max(s.marketcap)  from Stock s")
-    public Double getMaxMarketCap();
+    @Query("select s from Stock s order by s.name")
+    public List<Stock> orderByName();
 
-    @Query("select min(s.marketcap)  from Stock s")
-    public Double getMinMarketCap();
+    @Query("select s from Stock s order by s.volume")
+    public List<Stock> orderByVolume();
 
-    @Query("select max(s.volume)  from Stock s")
-    public Double getMaxVolume();
-
-    @Query("select min(s.volume)  from Stock s")
-    public Double getMinVolume();
+    @Query("select s from Stock s order by s.marketcap")
+    public List<Stock> orderByMarketCap();
 
 
 
