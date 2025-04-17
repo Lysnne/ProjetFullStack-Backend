@@ -16,7 +16,13 @@ public class Stock {
     private Double marketcap ;
 
 
+    //Pour les test unitaire
+    public Stock() {}
 
+    public Stock(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public Long getId_stock() {
         return id_stock;
