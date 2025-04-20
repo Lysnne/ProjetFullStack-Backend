@@ -30,27 +30,15 @@ public class CustomerController {
         return customerService.findAllCustomers();
     }
 
-    @PostMapping("/createCustomer")
-    public Customer createCustomer(@RequestBody Customer customer){
-        return customerService.createCustomer(customer);
-    }
 
 
-    @GetMapping("/customer/{id}")
+    @GetMapping("/getCustomer/{id}")
     public Customer getCustomerById(@PathVariable Long id) {
         return customerService.getCustomerById(id);
     }
 
 
-    @PutMapping("/customer/{id}")
-    Customer updateCustomer(@RequestBody Customer newOne, @PathVariable Long id) {
-        return customerService.updateCustomer(newOne, id);
-    }
 
-    @DeleteMapping("/customer/{id}")
-    String deleteCustomer(@PathVariable Long id){
-       return customerService.deleteCustomer(id);
-    }
 
 
 }

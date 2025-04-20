@@ -2,7 +2,6 @@ package ikasaidi.backend.service;
 
 import ikasaidi.backend.exception.StockNotFoundException;
 import ikasaidi.backend.model.Stock;
-import ikasaidi.backend.repositories.CustomerRepository;
 import ikasaidi.backend.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
