@@ -21,8 +21,9 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping("/signin/{username}/{pwd}")
-    public boolean signin(@PathVariable String username, @PathVariable String pwd){
-        return customerService.login(username, pwd);
+    public Customer signin(@PathVariable String username, @PathVariable String pwd){
+        return customerService.login(username,pwd);
+
     }
 
     @GetMapping("/getAllCustomers")
