@@ -23,7 +23,6 @@ public class Transaction {
     private Portfolio portfolio;
 
     @ManyToOne
-    @JoinColumn(name = "id_stock", referencedColumnName = "id_stock")
     private Stock stock;
 
     public Transaction(){
@@ -95,5 +94,19 @@ public class Transaction {
         this.transaction_status = transaction_status;
     }
 
+    public Portfolio getPortfolio() {
+        return portfolio;
+    }
 
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
 }

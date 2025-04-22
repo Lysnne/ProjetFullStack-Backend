@@ -29,5 +29,6 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     public List<Stock> orderByMarketCap();
 
 
+    public Stock findByIdstock(Long id_stock);
 
 }

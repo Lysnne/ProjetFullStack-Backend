@@ -17,11 +17,12 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(frame -> frame.disable()))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/**").permitAll()
-                        // .requestMatchers("api/users/").permitAll()
+                        .requestMatchers("api/users/").permitAll()
                         .requestMatchers("/stock/*").permitAll()
                         .requestMatchers("/customer/*").permitAll()
                         .requestMatchers("/portfolio/*").permitAll()
-                        .requestMatchers("/transaction/*").permitAll()
+                        .requestMatchers("/transaction/**").permitAll()
+                      .requestMatchers("/transaction/createTransaction/**").permitAll()
 
                         .anyRequest().authenticated()
                 );

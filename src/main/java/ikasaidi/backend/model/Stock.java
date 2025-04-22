@@ -7,7 +7,7 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_stock;
+    private Long idstock;
     private String symbol;
     private String name;
     private Double price;
@@ -16,14 +16,12 @@ public class Stock {
     private Double marketcap ;
 
 
-
-
-    public Long getId_stock() {
-        return id_stock;
+    public Long getIdstock() {
+        return idstock;
     }
 
-    public void setId_stock(Long id_stock) {
-        this.id_stock = id_stock;
+    public void setIdstock(Long idstock) {
+        this.idstock = idstock;
     }
 
     public String getSymbol() {

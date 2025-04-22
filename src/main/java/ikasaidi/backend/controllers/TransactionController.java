@@ -15,8 +15,8 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @PostMapping("/createTransaction")
-    public Transaction createTransaction(@RequestBody Transaction transaction) {
-        return transactionService.createTransaction(transaction);
+    @PostMapping("/createTransaction/{idstock}")
+    public Transaction createTransaction(@RequestBody Transaction transaction, @PathVariable Long idstock) {
+        return transactionService.createTransaction(transaction, idstock);
     }
 }
