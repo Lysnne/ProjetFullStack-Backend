@@ -14,7 +14,7 @@ public class Portfolio {
     private Double total_value ;
     private Double total_profit ;
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id_customer")
+    @JoinColumn(name = "idcustomer", referencedColumnName = "idcustomer")
     Customer customer;
 
 

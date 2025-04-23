@@ -9,7 +9,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_customer;
+    private Long idcustomer;
     private String first_name;
     private String last_name;
     private String date_of_birth;
@@ -31,12 +31,12 @@ public class Customer {
         this.password = password;
     }
 
-    public Long getId_customer() {
-        return id_customer;
+    public Long getIdcustomer() {
+        return idcustomer;
     }
 
-    public void setId_customer(Long id_customer) {
-        this.id_customer = id_customer;
+    public void setIdcustomer(Long idcustomer) {
+        this.idcustomer = idcustomer;
     }
 
     public String getFirst_name() {
