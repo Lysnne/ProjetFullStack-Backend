@@ -15,9 +15,6 @@ public class Stock {
     private Double volume;
     private Double marketcap ;
 
-
-    public Long getIdstock() {
-        return idstock;
     //Pour les test unitaire
     public Stock() {}
 
@@ -26,8 +23,8 @@ public class Stock {
         this.price = price;
     }
 
-    public Long getId_stock() {
-        return id_stock;
+    public Long getIdstock() {
+        return idstock;
     }
 
     public void setIdstock(Long idstock) {
