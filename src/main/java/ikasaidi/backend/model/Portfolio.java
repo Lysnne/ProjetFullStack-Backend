@@ -13,10 +13,16 @@ public class Portfolio {
     private Double shares_owned ;
     private Double total_value ;
     private Double total_profit ;
+
     @ManyToOne
     @JoinColumn(name = "idcustomer", referencedColumnName = "idcustomer")
     Customer customer;
 
+    public Portfolio() {
+        shares_owned = 0.0;
+        total_value = 0.0;
+        total_profit = 0.0;
+    }
 
     public Long getId_portfolio() {
         return id_portfolio;
@@ -50,4 +56,20 @@ public class Portfolio {
         this.total_profit = total_profit;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return  "Id: " + id_portfolio + "\n" +
+                "Shares owned: " + shares_owned + "\n" +
+                "Total value: " + total_value + "\n" +
+                "Total profit" + total_profit + "\n" +
+                "Customer: " + customer + "\n";
+    }
 }

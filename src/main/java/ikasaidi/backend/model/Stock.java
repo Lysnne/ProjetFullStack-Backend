@@ -78,4 +78,15 @@ public class Stock {
     public void setMarketcap(Double marketcap) {
         this.marketcap = marketcap;
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + idstock + "\n" +
+                "Symbol: " + symbol + "\n" +
+                "Name: " + name +  "\n" +
+                "Price: " + price + "\n" +
+                "Sector: " + sector +  "\n" +
+                "Volume: " + volume + "\n" +
+                "Market cap: " + marketcap + "\n";
+    }
 }

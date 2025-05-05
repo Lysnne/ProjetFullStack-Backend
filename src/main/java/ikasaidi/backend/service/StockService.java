@@ -1,6 +1,6 @@
 package ikasaidi.backend.service;
 
-import ikasaidi.backend.exception.StockNotFoundException;
+import ikasaidi.backend.exception.ModelNotFoundException;
 import ikasaidi.backend.model.Stock;
 import ikasaidi.backend.repositories.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class StockService {
 
     public Stock getStockById(Long id) {
         return stockRepository.findById(id)
-                .orElseThrow(() -> new StockNotFoundException(id));
+                .orElseThrow(() -> new ModelNotFoundException("Stock", id));
     }
 
     public Stock createStock(Stock stock) {
@@ -55,13 +55,13 @@ public class StockService {
                     stock.setVolume(newOne.getVolume());
                     stock.setMarketcap(newOne.getMarketcap());
                     return stockRepository.save(stock);
-                }).orElseThrow(() -> new StockNotFoundException(id));
+                }).orElseThrow(() -> new ModelNotFoundException("Stock", id));
 
     }
 
     public String deleteStock(Long id) {
         if(!stockRepository.existsById(id)){
-            throw new StockNotFoundException(id);
+            throw new ModelNotFoundException("Stock", id);
         }
         stockRepository.deleteById(id);
         return  "Stock with id "+ id +" has been deleted success.";

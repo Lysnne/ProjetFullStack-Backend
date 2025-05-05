@@ -104,4 +104,16 @@ public class Customer {
     }
 
 
+    @Override
+    public String toString() {
+        return  "Id: " + idcustomer + "\n" +
+                "First Name: " + first_name  + "\n" +
+                "Last Name: " + last_name + "\n" +
+                "Date of birth: " + date_of_birth + "\n" +
+                "Email: " + email + "\n" +
+                "Phone: " + phone +  "\n" +
+                "Username: " + username +  "\n" +
+                "Password: " + password + "\n" +
+                "Balance: " + balance + "\n";
+    }
 }

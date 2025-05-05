@@ -41,30 +41,4 @@ public class StockController {
         return stockService.getStocksSortedByMarketCap();
     }
 
-
-    @GetMapping("/getstock/{id}")
-    public Stock getStockById(@PathVariable Long id) {
-        return stockService.getStockById(id);
-    }
-
-    @PostMapping("/createStock")
-    public Stock createStock(@RequestBody Stock stock){
-        return stockService.createStock(stock);
-    }
-
-
-    @PutMapping("/updateStock/{id}")
-    Stock updateStock(@RequestBody Stock newOne, @PathVariable Long id) {
-       return stockService.updateStock(newOne, id);
-    }
-
-
-    @DeleteMapping("/deleteStock/{id}")
-    String deleteStock(@PathVariable Long id){
-       return stockService.deleteStock(id);
-    }
-
-
-
-
 }

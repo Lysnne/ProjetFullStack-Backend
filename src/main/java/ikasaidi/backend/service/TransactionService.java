@@ -8,6 +8,9 @@ import ikasaidi.backend.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class TransactionService {
     @Autowired
@@ -25,5 +28,17 @@ public class TransactionService {
         transactionRepository.save(transaction);
         System.out.println(transaction.getStock());
         return transaction;
+    }
+
+    public List<Transaction> getAllTransactionsById(Long idtransaction) {
+        List<Transaction> actualList = transactionRepository.findAll();
+        List<Transaction> newList = new ArrayList<>();
+
+        for(Transaction t : actualList) {
+            if(t.getId_transaction() == idtransaction) {
+                newList.add(t);
+            }
+        }
+        return newList;
     }
 }

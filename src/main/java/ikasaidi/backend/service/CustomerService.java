@@ -1,11 +1,8 @@
 package ikasaidi.backend.service;
 
-import ikasaidi.backend.exception.CustomerNotFoundException;
-import ikasaidi.backend.exception.StockNotFoundException;
+import ikasaidi.backend.exception.ModelNotFoundException;
 import ikasaidi.backend.model.Customer;
-import ikasaidi.backend.model.Stock;
 import ikasaidi.backend.repositories.CustomerRepository;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +13,6 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
     public CustomerService(CustomerRepository customerRepository){
-
         this.customerRepository = customerRepository;
     }
 
@@ -28,7 +24,6 @@ public class CustomerService {
         //check id pwds matches
         if (customer != null && customer.getPassword().equals(password)){
             return customer;
-
         }
         return null;
 
@@ -44,7 +39,7 @@ public class CustomerService {
 
     public Customer getCustomerById(Long id){
         return customerRepository.findById(id)
-                .orElseThrow(() -> new CustomerNotFoundException(id));
+                .orElseThrow(() -> new ModelNotFoundException("Customer", id));
     }
 
 
@@ -62,7 +57,7 @@ public class CustomerService {
                     customer.setBalance(newOne.getBalance());
                 System.out.println(customer);
                 return customerRepository.save(customer);
-            }).orElseThrow(() -> new CustomerNotFoundException(id));
+            }).orElseThrow(() -> new ModelNotFoundException("Customer", id));
 
 
     }

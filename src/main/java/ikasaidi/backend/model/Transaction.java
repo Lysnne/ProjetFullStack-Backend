@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_transaction;
+    private Long id_transaction;
     private Double shares ;
     private Double price_per_share ;
     private Double transaction_fee ;
@@ -30,11 +30,11 @@ public class Transaction {
         transaction_date = LocalDateTime.now();
     }
 
-    public Integer getId_transaction() {
+    public Long getId_transaction() {
         return id_transaction;
     }
 
-    public void setId_transaction(Integer id_transaction) {
+    public void setId_transaction(Long id_transaction) {
         this.id_transaction = id_transaction;
     }
 
@@ -109,4 +109,20 @@ public class Transaction {
     public void setStock(Stock stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return  "Id: " + id_transaction + "\n" +
+                "Shares: " + shares + "\n" +
+                "Price per share: " + price_per_share + "\n" +
+                "Transaction fee: " + transaction_fee + "\n" +
+                "Net_amount: " + net_amount + "\n" +
+                "Order Type: " + order_type + "\n" +
+                "Date: " + transaction_date + "\n" +
+                "Status: " + transaction_status + "\n" +
+                "Portfolio: " + portfolio + "\n" +
+                "Stock: " + stock + "\n";
+    }
 }
+
+
