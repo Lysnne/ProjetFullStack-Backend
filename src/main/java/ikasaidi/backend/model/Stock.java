@@ -81,12 +81,13 @@ public class Stock {
 
     @Override
     public String toString() {
-        return "Id: " + idstock + "\n" +
+        return "{Stock: " +
+                "Id: " + idstock + "\n" +
                 "Symbol: " + symbol + "\n" +
                 "Name: " + name +  "\n" +
                 "Price: " + price + "\n" +
                 "Sector: " + sector +  "\n" +
                 "Volume: " + volume + "\n" +
-                "Market cap: " + marketcap + "\n";
+                "Market cap: " + marketcap + "}";
     }
 }

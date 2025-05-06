@@ -112,7 +112,8 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return  "Id: " + id_transaction + "\n" +
+        return  "{Transaction: " + "\n" +
+                "Id: " + id_transaction + "\n" +
                 "Shares: " + shares + "\n" +
                 "Price per share: " + price_per_share + "\n" +
                 "Transaction fee: " + transaction_fee + "\n" +
@@ -121,7 +122,7 @@ public class Transaction {
                 "Date: " + transaction_date + "\n" +
                 "Status: " + transaction_status + "\n" +
                 "Portfolio: " + portfolio + "\n" +
-                "Stock: " + stock + "\n";
+                "Stock: " + stock + "}" ;
     }
 }
 

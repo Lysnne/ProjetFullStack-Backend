@@ -66,10 +66,11 @@ public class Portfolio {
 
     @Override
     public String toString() {
-        return  "Id: " + id_portfolio + "\n" +
+        return  "Portfolio: " + "\n" +
+                "Id: " + id_portfolio + "\n" +
                 "Shares owned: " + shares_owned + "\n" +
                 "Total value: " + total_value + "\n" +
                 "Total profit" + total_profit + "\n" +
-                "Customer: " + customer + "\n";
+                "Customer: " + customer + "}";
     }
 }

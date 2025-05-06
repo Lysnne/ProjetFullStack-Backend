@@ -21,6 +21,7 @@ public class CustomerController {
         return customerService.login(username,pwd);
 
     }
+
     @GetMapping("/getAllCustomers")
     public List<Customer> getAll(){
         return customerService.findAllCustomers();

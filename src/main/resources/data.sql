@@ -1,3 +1,5 @@
+USE assetra;
+
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('AAPL', 'Apple Inc.', 175.32, 'Technology', 80520000, 2743000000000);
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('MSFT', 'Microsoft Corp.', 345.76, 'Technology', 56340000, 2580000000000);
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('GOOGL', 'Alphabet Inc.', 135.24, 'Technology', 37450000, 1800000000000);
@@ -33,13 +35,13 @@ INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (123.25, 
 INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (89.50, 13500.75, 2500.45);
 
 
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (100.00, 150.25, 2.50, 15022.50, 'BUY', '2025-03-21 10:30:00', 'Completed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (50.00, 350.75, 1.80, 17378.70, 'SELL', '2025-03-20 14:15:00', 'Pending');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (200.00, 45.60, 3.00, 9120.00, 'BUY', '2025-03-19 09:00:00', 'Completed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (75.00, 120.40, 2.00, 9025.00, 'SELL', '2025-03-18 11:45:00', 'Failed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (150.00, 88.25, 1.50, 13162.50, 'BUY', '2025-03-17 15:30:00', 'Completed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (120.00, 210.30, 3.50, 25257.50, 'BUY', '2025-03-21 13:00:00', 'Completed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (80.00, 95.00, 2.00, 7580.00, 'SELL', '2025-03-20 16:45:00', 'Completed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (50.00, 275.00, 1.50, 13623.50, 'BUY', '2025-03-19 10:30:00', 'Pending');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (200.00, 80.00, 5.00, 15995.00, 'SELL', '2025-03-18 08:00:00', 'Failed');
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status) VALUES (60.00, 135.50, 2.00, 8113.00, 'BUY', '2025-03-17 14:20:00', 'Completed');
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (100.00, 150.25, 2.50, 15022.50, 'BUY', '2025-03-21 10:30:00', 'Completed', 1);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (50.00, 350.75, 1.80, 17378.70, 'SELL', '2025-03-20 14:15:00', 'Pending', 1);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (200.00, 45.60, 3.00, 9120.00, 'BUY', '2025-03-19 09:00:00', 'Completed',1);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (75.00, 120.40, 2.00, 9025.00, 'SELL', '2025-03-18 11:45:00', 'Failed', 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (150.00, 88.25, 1.50, 13162.50, 'BUY', '2025-03-17 15:30:00', 'Completed', 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (120.00, 210.30, 3.50, 25257.50, 'BUY', '2025-03-21 13:00:00', 'Completed', 1);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (80.00, 95.00, 2.00, 7580.00, 'SELL', '2025-03-20 16:45:00', 'Completed', 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (50.00, 275.00, 1.50, 13623.50, 'BUY', '2025-03-19 10:30:00', 'Pending', 3);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (200.00, 80.00, 5.00, 15995.00, 'SELL', '2025-03-18 08:00:00', 'Failed', 4);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, id_portfolio) VALUES (60.00, 135.50, 2.00, 8113.00, 'BUY', '2025-03-17 14:20:00', 'Completed', 5);

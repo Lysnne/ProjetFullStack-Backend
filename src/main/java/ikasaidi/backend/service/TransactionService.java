@@ -1,8 +1,10 @@
 package ikasaidi.backend.service;
 
 
+import ikasaidi.backend.model.Portfolio;
 import ikasaidi.backend.model.Stock;
 import ikasaidi.backend.model.Transaction;
+import ikasaidi.backend.repositories.PortfolioRepository;
 import ikasaidi.backend.repositories.StockRepository;
 import ikasaidi.backend.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class TransactionService {
     @Autowired
     StockRepository stockRepository;
 
+    @Autowired
+    PortfolioRepository portfolioRepository;
 
 
     public Transaction createTransaction(Transaction transaction, Long idstock) {
@@ -30,15 +34,22 @@ public class TransactionService {
         return transaction;
     }
 
-    public List<Transaction> getAllTransactionsById(Long idtransaction) {
+    public List<Transaction> getAllTransactionsById(Long idportfolio) {
+        Portfolio portfolio = portfolioRepository.findById_portfolio(idportfolio);
+        System.out.println(portfolio);
+
         List<Transaction> actualList = transactionRepository.findAll();
         List<Transaction> newList = new ArrayList<>();
 
         for(Transaction t : actualList) {
-            if(t.getId_transaction() == idtransaction) {
+            if(t.getPortfolio().getId_portfolio() == portfolio.getId_portfolio()) {
+                System.out.println(t);
                 newList.add(t);
             }
         }
         return newList;
     }
+
+
+
 }
