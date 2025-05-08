@@ -9,7 +9,7 @@ public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_portfolio ;
+    private Long idportfolio ;
     private Double shares_owned ;
     private Double total_value ;
     private Double total_profit ;
@@ -24,12 +24,13 @@ public class Portfolio {
         total_profit = 0.0;
     }
 
-    public Long getId_portfolio() {
-        return id_portfolio;
+
+    public Long getIdportfolio() {
+        return idportfolio;
     }
 
-    public void setId_portfolio(Long id_portfolio) {
-        this.id_portfolio = id_portfolio;
+    public void setIdportfolio(Long idportfolio) {
+        this.idportfolio = idportfolio;
     }
 
     public Double getShares_owned() {
@@ -67,7 +68,7 @@ public class Portfolio {
     @Override
     public String toString() {
         return  "Portfolio: " + "\n" +
-                "Id: " + id_portfolio + "\n" +
+                "Id: " + idportfolio + "\n" +
                 "Shares owned: " + shares_owned + "\n" +
                 "Total value: " + total_value + "\n" +
                 "Total profit" + total_profit + "\n" +

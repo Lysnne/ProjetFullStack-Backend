@@ -23,7 +23,7 @@ public class TransactionController {
         return transactionService.createTransaction(transaction, idstock);
     }
 
-    @GetMapping("/getAllTransactionsById/{id}")
+    @GetMapping("/getAllTransactionsById/{idportfolio}")
     public List<Transaction> getAllTransactionsById(@PathVariable Long idportfolio) {
         return transactionService.getAllTransactionsById(idportfolio);
     }

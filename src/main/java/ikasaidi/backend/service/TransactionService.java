@@ -35,14 +35,14 @@ public class TransactionService {
     }
 
     public List<Transaction> getAllTransactionsById(Long idportfolio) {
-        Portfolio portfolio = portfolioRepository.findById_portfolio(idportfolio);
+        Portfolio portfolio = portfolioRepository.findByIdportfolio(idportfolio);
         System.out.println(portfolio);
 
         List<Transaction> actualList = transactionRepository.findAll();
         List<Transaction> newList = new ArrayList<>();
 
         for(Transaction t : actualList) {
-            if(t.getPortfolio().getId_portfolio() == portfolio.getId_portfolio()) {
+            if(t.getPortfolio().getIdportfolio() == portfolio.getIdportfolio()) {
                 System.out.println(t);
                 newList.add(t);
             }

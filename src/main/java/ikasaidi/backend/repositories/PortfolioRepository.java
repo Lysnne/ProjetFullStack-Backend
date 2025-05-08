@@ -11,5 +11,5 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "portfolio", path = "portfolio")
 public interface PortfolioRepository extends JpaRepository<Portfolio, Long> {
 
-    public Portfolio findById_portfolio(Long id_portfolio);
+    Portfolio findByIdportfolio(Long idportfolio);
 }

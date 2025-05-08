@@ -19,7 +19,7 @@ public class Transaction {
     private String transaction_status;
 
     @ManyToOne
-    @JoinColumn(name = "id_portfolio", referencedColumnName = "id_portfolio")
+    @JoinColumn(name = "idportfolio", referencedColumnName = "idportfolio")
     private Portfolio portfolio;
 
     @ManyToOne
