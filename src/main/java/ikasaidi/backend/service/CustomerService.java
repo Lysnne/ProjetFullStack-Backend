@@ -1,6 +1,7 @@
 package ikasaidi.backend.service;
 
-import ikasaidi.backend.exception.ModelNotFoundException;
+import ikasaidi.backend.dto.EditCustomer;
+import ikasaidi.backend.exception.CustomerNotFoundException;
 import ikasaidi.backend.model.Customer;
 import ikasaidi.backend.repositories.CustomerRepository;
 import org.springframework.stereotype.Service;
@@ -61,5 +62,19 @@ public class CustomerService {
 
 
     }
+
+    /*Ikram*/
+    public Customer editCusto(EditCustomer newOne, Long id) {
+        return customerRepository.findById(id)
+                .map(customer -> {
+                    customer.setFirst_name(newOne.getFirst_name());
+                    customer.setLast_name(newOne.getLast_name());
+                    customer.setEmail(newOne.getEmail());
+                    customer.setPhone(newOne.getPhone());
+                    customer.setPassword(newOne.getPassword());
+                    return customerRepository.save(customer);
+                }).orElseThrow(() -> new CustomerNotFoundException(id));
+    }
+
 
 }

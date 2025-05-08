@@ -1,6 +1,7 @@
 package ikasaidi.backend.controllers;
 
 
+import ikasaidi.backend.dto.EditCustomer;
 import ikasaidi.backend.model.Customer;
 import ikasaidi.backend.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ *
+ */
 @RestController
 @RequestMapping("/customer")
 @CrossOrigin
@@ -37,6 +41,12 @@ public class CustomerController {
         return customerService.updateCustomer(newOne, id);
     }
 
+
+
+    @PutMapping("/customers/{id}")
+    public Customer editCustomer(@RequestBody EditCustomer dto, @PathVariable Long id) {
+        return customerService.editCusto(dto, id);
+    }
 
 
 
