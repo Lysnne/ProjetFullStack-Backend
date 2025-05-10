@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class TransactionService {
@@ -48,6 +49,53 @@ public class TransactionService {
             }
         }
         return newList;
+    }
+
+    public List<Stock> getQuantityStocksOwned(Long idportfolio) {
+        Portfolio portfolio = portfolioRepository.findByIdportfolio(idportfolio);
+        System.out.println(portfolio);
+
+        List<Transaction> actualList = transactionRepository.findAll();
+        List<Transaction> filtredList = new ArrayList<>();
+
+        List<Stock> buy = new ArrayList<>();
+        List<Stock> sell = new ArrayList<>();
+
+
+        for(Transaction t : actualList) {
+            if(t.getPortfolio().getIdportfolio() == portfolio.getIdportfolio()) {
+                if(t.getTransaction_status().equals("Completed")){
+                    filtredList.add(t);
+                }
+            }
+        }
+
+        for(Transaction t : filtredList) {
+            if(t.getOrder_type().equals("SELL")){
+                sell.add(t.getStock());
+            }
+            else {
+                buy.add(t.getStock());
+            }
+        }
+
+        List<Stock> owned = new ArrayList<>();
+
+        for(Stock s : buy) {
+            owned.add(s);
+        }
+
+        for (Stock s : sell) {
+            for(Stock ss: owned){
+                if(s.getIdstock() == ss.getIdstock()) {
+                    owned.remove(ss);
+                    break;
+                }
+
+            }
+        }
+
+        return owned;
     }
 
 

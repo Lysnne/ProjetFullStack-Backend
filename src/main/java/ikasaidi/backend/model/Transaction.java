@@ -23,6 +23,7 @@ public class Transaction {
     private Portfolio portfolio;
 
     @ManyToOne
+    @JoinColumn(name = "idstock", referencedColumnName = "idstock")
     private Stock stock;
 
     public Transaction(){

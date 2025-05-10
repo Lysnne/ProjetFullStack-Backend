@@ -28,20 +28,20 @@ INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, userna
 INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Michael', 'Brown', '1995-02-28', 'michael.brown@example.com', '+1-555-4567890' , 'michaelbrown95', 'Password101', 800.30);
 INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Sophia', 'Miller', '1988-08-14', 'sophia.miller@example.com', '+1-555-5678901' , 'sophiamiller88', 'Password102', 1200.40);
 
-INSERT INTO portfolio (shares_owned, total_value, total_profit)VALUES (150.50, 25000.75, 5000.25);
+INSERT INTO portfolio (shares_owned, total_value, total_profit)VALUES (150.00, 25000.75, 5000.25);
 INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (320.00, 48000.40, 8000.60);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (450.75, 67000.00, 12000.90);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (123.25, 18300.50, 3200.10);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (89.50, 13500.75, 2500.45);
+INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (450.00, 67000.00, 12000.90);
+INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (123.00, 18300.50, 3200.10);
+INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (89.00, 13500.75, 2500.45);
 
 
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (100.00, 150.25, 2.50, 15022.50, 'BUY', '2025-03-21 10:30:00', 'Completed', 1);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (50.00, 350.75, 1.80, 17378.70, 'SELL', '2025-03-20 14:15:00', 'Pending', 1);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (200.00, 45.60, 3.00, 9120.00, 'BUY', '2025-03-19 09:00:00', 'Completed',1);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (75.00, 120.40, 2.00, 9025.00, 'SELL', '2025-03-18 11:45:00', 'Failed', 2);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (150.00, 88.25, 1.50, 13162.50, 'BUY', '2025-03-17 15:30:00', 'Completed', 2);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (120.00, 210.30, 3.50, 25257.50, 'BUY', '2025-03-21 13:00:00', 'Completed', 1);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (80.00, 95.00, 2.00, 7580.00, 'SELL', '2025-03-20 16:45:00', 'Completed', 2);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (50.00, 275.00, 1.50, 13623.50, 'BUY', '2025-03-19 10:30:00', 'Pending', 3);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (200.00, 80.00, 5.00, 15995.00, 'SELL', '2025-03-18 08:00:00', 'Failed', 4);
-INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio) VALUES (60.00, 135.50, 2.00, 8113.00, 'BUY', '2025-03-17 14:20:00', 'Completed', 5);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (100.00, 150.25, 2.50, 15022.50, 'BUY', '2025-03-21 10:30:00', 'Completed', 1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (50.00, 350.75, 1.80, 17378.70, 'BUY', '2025-03-20 14:15:00', 'Completed', 1,5 );
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (200.00, 45.60, 3.00, 9120.00, 'BUY', '2025-03-19 09:00:00', 'Completed',1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (75.00, 120.40, 2.00, 9025.00, 'SELL', '2025-03-18 11:45:00', 'Completed', 1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (150.00, 88.25, 1.50, 13162.50, 'BUY', '2025-03-17 15:30:00', 'Completed', 1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (120.00, 210.30, 3.50, 25257.50, 'BUY', '2025-03-21 13:00:00', 'Completed', 1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (80.00, 95.00, 2.00, 7580.00, 'SELL', '2025-03-20 16:45:00', 'Completed', 2, 6);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (50.00, 275.00, 1.50, 13623.50, 'BUY', '2025-03-19 10:30:00', 'Completed', 1, 2);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (200.00, 80.00, 5.00, 15995.00, 'SELL', '2025-03-18 08:00:00', 'Failed', 4, 8);
+INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (60.00, 135.50, 2.00, 8113.00, 'BUY', '2025-03-17 14:20:00', 'Completed', 5, 9);

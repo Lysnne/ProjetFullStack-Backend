@@ -2,6 +2,7 @@ package ikasaidi.backend.controllers;
 
 
 import ikasaidi.backend.model.Customer;
+import ikasaidi.backend.model.Stock;
 import ikasaidi.backend.model.Transaction;
 import ikasaidi.backend.service.StockService;
 import ikasaidi.backend.service.TransactionService;
@@ -26,6 +27,11 @@ public class TransactionController {
     @GetMapping("/getAllTransactionsById/{idportfolio}")
     public List<Transaction> getAllTransactionsById(@PathVariable Long idportfolio) {
         return transactionService.getAllTransactionsById(idportfolio);
+    }
+
+    @GetMapping("/getQuantityStocksOwned/{idportfolio}")
+    public List<Stock> getQuantityStocksOwned(@PathVariable Long idportfolio) {
+        return transactionService.getQuantityStocksOwned(idportfolio);
     }
 
 
