@@ -71,7 +71,8 @@ public class CustomerService {
                     customer.setLast_name(newOne.getLast_name());
                     customer.setEmail(newOne.getEmail());
                     customer.setPhone(newOne.getPhone());
-                    customer.setPassword(newOne.getPassword());
+                    customer.setBalance(newOne.getBalance());
+                    customer.setDate_of_birth(newOne.getDate_of_birth());
                     return customerRepository.save(customer);
                 }).orElseThrow(() -> new ModelNotFoundException("Customer", id));
     }

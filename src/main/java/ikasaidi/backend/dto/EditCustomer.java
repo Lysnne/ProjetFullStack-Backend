@@ -2,11 +2,21 @@ package ikasaidi.backend.dto;
 
 public class EditCustomer {
 
+    private int id_customer;
     private String first_name;
     private String last_name;
     private String email;
     private String phone;
-    private String password;
+    private Double balance;
+    private String date_of_birth;
+
+    public int getId_customer() {
+        return id_customer;
+    }
+
+    public void setId_customer(int id_customer) {
+        this.id_customer = id_customer;
+    }
 
     public String getFirst_name() {
         return first_name;
@@ -40,11 +50,19 @@ public class EditCustomer {
         this.phone = phone;
     }
 
-    public String getPassword() {
-        return password;
+    public Double getBalance() {
+        return balance;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public String getDate_of_birth() {
+        return date_of_birth;
+    }
+
+    public void setDate_of_birth(String date_of_birth) {
+        this.date_of_birth = date_of_birth;
     }
 }
