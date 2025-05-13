@@ -44,23 +44,10 @@ public class CustomerService {
     }
 
 
-    public Customer updateCustomer(Customer newOne, Long id) {
-        System.out.println(id);
-        return customerRepository.findById(id)
-            .map(customer -> {
-                    customer.setIdcustomer(newOne.getIdcustomer());
-                    customer.setFirst_name(newOne.getFirst_name());
-                    customer.setLast_name(newOne.getLast_name());
-                    customer.setDate_of_birth(newOne.getDate_of_birth());
-                    customer.setEmail(newOne.getEmail());
-                    customer.setPhone(newOne.getPhone());
-                    customer.setPassword(newOne.getPassword());
-                    customer.setBalance(newOne.getBalance());
-                System.out.println(customer);
-                return customerRepository.save(customer);
-            }).orElseThrow(() -> new ModelNotFoundException("Customer", id));
-
-
+    public Customer updateBalance(Customer newOne, Long id) {
+        Customer customer = customerRepository.findByIdcustomer(id);
+        customer.setBalance(newOne.getBalance());
+        return customerRepository.save(customer);
     }
 
     /*Ikram*/

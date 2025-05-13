@@ -28,11 +28,11 @@ INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, userna
 INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Michael', 'Brown', '1995-02-28', 'michael.brown@example.com', '+1-555-4567890' , 'michaelbrown95', 'Password101', 800.30);
 INSERT INTO customer (first_name, last_name, date_of_birth, email, phone, username, password, balance) VALUES ('Sophia', 'Miller', '1988-08-14', 'sophia.miller@example.com', '+1-555-5678901' , 'sophiamiller88', 'Password102', 1200.40);
 
-INSERT INTO portfolio (shares_owned, total_value, total_profit)VALUES (150.00, 25000.75, 5000.25);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (320.00, 48000.40, 8000.60);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (450.00, 67000.00, 12000.90);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (123.00, 18300.50, 3200.10);
-INSERT INTO portfolio (shares_owned, total_value, total_profit) VALUES (89.00, 13500.75, 2500.45);
+INSERT INTO portfolio (shares_owned, total_value, total_profit, idcustomer)VALUES (150.00, 25000.75, 5000.25,1);
+INSERT INTO portfolio (shares_owned, total_value, total_profit, idcustomer) VALUES (320.00, 48000.40, 8000.60, 2);
+INSERT INTO portfolio (shares_owned, total_value, total_profit, idcustomer) VALUES (450.00, 67000.00, 12000.90, 3);
+INSERT INTO portfolio (shares_owned, total_value, total_profit, idcustomer) VALUES (123.00, 18300.50, 3200.10, 4);
+INSERT INTO portfolio (shares_owned, total_value, total_profit, idcustomer) VALUES (89.00, 13500.75, 2500.45, 5);
 
 
 INSERT INTO transaction (shares, price_per_share, transaction_fee, net_amount, order_type, transaction_date, transaction_status, idportfolio, idstock) VALUES (100.00, 150.25, 2.50, 15022.50, 'BUY', '2025-03-21 10:30:00', 'Completed', 1, 2);

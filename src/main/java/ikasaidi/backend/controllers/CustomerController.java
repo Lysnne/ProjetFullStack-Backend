@@ -38,7 +38,7 @@ public class CustomerController {
 
     @PutMapping("/updateCustomer/{id}")
     public Customer updatCustomer(@RequestBody Customer newOne, @PathVariable Long id) {
-        return customerService.updateCustomer(newOne, id);
+        return customerService.updateBalance(newOne, id);
     }
 
 
