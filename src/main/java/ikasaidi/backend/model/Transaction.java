@@ -33,6 +33,8 @@ public class Transaction {
         transaction_date = LocalDateTime.now();
     }
 
+
+
     public Long getId_transaction() {
         return id_transaction;
     }

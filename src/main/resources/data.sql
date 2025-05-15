@@ -1,5 +1,6 @@
 USE assetra;
 
+
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('AAPL', 'Apple Inc.', 175.32, 'Technology', 80520000, 2743000000000);
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('MSFT', 'Microsoft Corp.', 345.76, 'Technology', 56340000, 2580000000000);
 INSERT INTO stock (symbol, name, price, sector, volume, marketcap) VALUES ('GOOGL', 'Alphabet Inc.', 135.24, 'Technology', 37450000, 1800000000000);
