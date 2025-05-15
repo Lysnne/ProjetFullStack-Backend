@@ -12,7 +12,4 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "transaction", path = "transaction")
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 
-
-
-
 }

@@ -1,6 +1,7 @@
 package ikasaidi.backend.controllers;
 
 
+import ikasaidi.backend.dto.StockInfo;
 import ikasaidi.backend.model.Customer;
 import ikasaidi.backend.model.Stock;
 import ikasaidi.backend.model.Transaction;
@@ -19,9 +20,9 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @PostMapping("/createTransaction/{idstock}")
-    public Transaction createTransaction(@RequestBody Transaction transaction, @PathVariable Long idstock) {
-        return transactionService.createTransaction(transaction, idstock);
+    @PostMapping("/createTransaction/{idportfolio}/{idstock}")
+    public Transaction createTransaction(@RequestBody Transaction transaction, @PathVariable Long idstock, @PathVariable Long idportfolio) {
+        return transactionService.createTransaction(transaction, idstock, idportfolio);
     }
 
     @GetMapping("/getAllTransactionsById/{idportfolio}")
@@ -30,7 +31,7 @@ public class TransactionController {
     }
 
     @GetMapping("/getQuantityStocksOwned/{idportfolio}")
-    public List<Stock> getQuantityStocksOwned(@PathVariable Long idportfolio) {
+    public List<StockInfo> getQuantityStocksOwned(@PathVariable Long idportfolio) {
         return transactionService.getQuantityStocksOwned(idportfolio);
     }
 

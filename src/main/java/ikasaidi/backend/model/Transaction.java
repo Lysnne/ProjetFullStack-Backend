@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 @Entity
 
 public class Transaction {
+    public static int cpt = 0;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_transaction;
@@ -27,7 +29,7 @@ public class Transaction {
     private Stock stock;
 
     public Transaction(){
-        transaction_status = "pending";
+        transaction_status = "Completed";
         transaction_date = LocalDateTime.now();
     }
 

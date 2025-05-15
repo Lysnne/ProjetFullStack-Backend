@@ -36,8 +36,8 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
 
-    @PutMapping("/updateCustomer/{id}")
-    public Customer updatCustomer(@RequestBody Customer newOne, @PathVariable Long id) {
+    @PutMapping("/updateBalance/{id}")
+    public Customer updateBalance(@RequestBody Customer newOne, @PathVariable Long id) {
         return customerService.updateBalance(newOne, id);
     }
 

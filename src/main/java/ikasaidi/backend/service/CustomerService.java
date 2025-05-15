@@ -27,12 +27,7 @@ public class CustomerService {
             return customer;
         }
         return null;
-
     }
-
-  /*  public List<Customer> insertListCustomer(List<Customer> list){
-        return customerRepository.saveAll(list);
-    }*/
 
     public List<Customer> findAllCustomers(){
         return customerRepository.findAll();
