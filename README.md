@@ -15,10 +15,6 @@ Les utilisateurs pourront observer une navbar simple et attrayante avec plusieur
 - Yislaine Yanell Perez Gracia
 - Ikram Saidi
 
-## 🎓​​​ Règlementation
-
-## 🗂️ Libraires
-
 ## 🚀 Technologies
 - Frontend: React
 - Backend: Spring
